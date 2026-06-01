@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glamour by Suiza · Joyería Fina</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0A0A0A;
+  --white:#FFFFFF;
+  --off:#F8F7F5;
+  --gold:#C4A55A;
+  --gold-light:#E2CC91;
+  --gray:#6B6B6B;
+  --light-gray:#E8E8E8;
+  --border:rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(252,250,246,0.97);backdrop-filter:blur(10px);border-bottom:none;box-shadow:0 1px 0 rgba(196,165,90,0.25)}
+nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold) 35%,#B8923E 65%,var(--gold-light))}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);transition:color 0.2s}
+.nav-links a:hover{color:var(--black)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-cta{font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;transition:color 0.2s,border-color 0.2s}
+.nav-cta:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:70px;padding-bottom:2rem;text-align:center;position:relative}
+.hero-logo{display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-bottom:2.5rem}
+.logo-main{font-family:'Montserrat',sans-serif;font-weight:200;font-size:clamp(2.7rem,8.1vw,7.2rem);letter-spacing:0.45em;text-transform:uppercase;color:var(--black);line-height:1}
+.logo-sub{font-family:'Montserrat',sans-serif;font-weight:300;font-size:clamp(0.6rem,1.5vw,1rem);letter-spacing:0.7em;text-transform:uppercase;color:var(--black)}
+.hero-divider{width:1px;height:35px;background:var(--black);margin:0 auto 2rem}
+.hero-content{display:grid;grid-template-columns:1fr auto 1fr;gap:4rem;align-items:start;width:100%;max-width:1100px;padding:0 4rem 2rem}
+.hero-left-text{text-align:left;padding-bottom:1rem}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1rem}
+.hero-headline{font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(1.4rem,3vw,2.2rem);letter-spacing:0.08em;text-transform:uppercase;line-height:1.2;color:var(--black)}
+.hero-center-line{width:1px;background:var(--light-gray);min-height:120px;margin-top:1rem}
+.hero-right-text{text-align:left}
+.hero-desc{font-size:0.82rem;line-height:2;color:var(--gray);font-weight:300;max-width:280px}
+.hero-actions{display:flex;gap:1.5rem;margin-top:2rem;align-items:center}
+.btn-dark{padding:0.85rem 2.5rem;background:var(--black);color:var(--white);text-decoration:none;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:500;transition:background 0.25s;border:1px solid var(--black)}
+.btn-dark:hover{background:var(--gold);border-color:var(--gold)}
+.btn-outline{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;transition:color 0.2s}
+.btn-outline:hover{color:var(--gold);border-color:var(--gold)}
+.hero-stores{margin-top:2.4rem;border-top:1px solid var(--light-gray);padding-top:1.4rem;max-width:320px}
+.hero .hero-content-2col{grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;padding:0 4rem 2rem}
+.hero .hero-content-2col .hero-left-text{padding-bottom:0}
+.hero .hero-content-2col .hero-stores{max-width:360px;margin-top:0;border-top:none;padding-top:0}
+@media(max-width:768px){.hero .hero-content-2col{grid-template-columns:1fr;gap:2.5rem;padding:0 1.5rem}.hero .hero-content-2col .hero-stores{margin-top:0.5rem;max-width:none}}
+.hero-stores-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.hero-store{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border)}
+.hero-store:last-child{border-bottom:none;padding-bottom:0}
+.hs-info{display:flex;flex-direction:column;gap:0.3rem}
+.hs-name{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);font-weight:500}
+.hs-meta{font-size:0.62rem;letter-spacing:0.04em;color:var(--gray);font-weight:300}
+.hs-map{font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--light-gray);padding-bottom:1px;white-space:nowrap;transition:color 0.2s,border-color 0.2s}
+.hs-map:hover{color:var(--gold);border-color:var(--gold)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.hero-scroll span{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray)}
+.scroll-line{width:1px;height:40px;background:var(--black);animation:scrollAnim 2s ease-in-out infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* MARQUEE */
+.marquee{background:var(--black);padding:0.9rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:marquee 25s linear infinite}
+.marquee-item{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
+.marquee-item::after{content:'✦';color:var(--gold);font-size:0.5rem}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* COLLECTION */
+#coleccion{padding:7rem 4rem;background:var(--white)}
+.col-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+.col-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:400}
+.col-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
+.col-link{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--light-gray);padding-bottom:2px;transition:color 0.2s,border-color 0.2s}
+.col-link:hover{color:var(--black);border-color:var(--black)}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.col-item{position:relative;overflow:hidden;cursor:pointer;background:var(--off)}
+.col-img{width:100%;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform 0.6s ease}
+.col-item:hover .col-img{transform:scale(1.04)}
+.col-img svg{transition:transform 0.6s ease}
+.col-meta{padding:1.2rem 0 0}
+.col-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--black);margin-bottom:0.3rem}
+.col-detail{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray)}
+.col-btn{display:inline-block;margin-top:0.8rem;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;transition:color 0.2s}
+.col-btn:hover{color:var(--gold)}
+
+/* ABOUT */
+.about{padding:7rem 4rem;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+.about-text .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.about-text h2{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);line-height:1.2;margin-bottom:2rem}
+.about-text p{font-size:0.82rem;line-height:2.1;color:rgba(255,255,255,0.5);font-weight:300;margin-bottom:1.2rem}
+.about-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;margin-top:1rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.a-stat{border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem}
+.a-stat .num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--white);line-height:1}
+.a-stat .label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:0.5rem}
+.a-materials{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;line-height:1.45;color:var(--white)}
+
+/* VALUES */
+.values{padding:7rem 4rem;background:var(--off)}
+.val-header{text-align:center;margin-bottom:5rem}
+.val-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.val-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--light-gray);border-left:1px solid var(--light-gray)}
+.val-item{padding:2.5rem 2rem;border-right:1px solid var(--light-gray);border-bottom:1px solid var(--light-gray)}
+.val-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold);margin-bottom:1rem;line-height:1}
+.val-name{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);margin-bottom:0.8rem;font-weight:500}
+.val-desc{font-size:0.78rem;line-height:1.9;color:var(--gray);font-weight:300}
+
+/* TESTIMONIALS */
+.testimonials{padding:7rem 4rem;background:var(--white)}
+.test-header{text-align:center;margin-bottom:5rem}
+.test-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.test-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.test-card{padding:2.5rem;border:1px solid var(--light-gray)}
+.test-stars{color:var(--gold);font-size:0.75rem;letter-spacing:3px;margin-bottom:1.5rem}
+.test-quote{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;line-height:1.8;color:var(--black);margin-bottom:1.5rem;font-style:italic}
+.test-divider{width:30px;height:1px;background:var(--gold);margin-bottom:1.5rem}
+.test-author{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray)}
+
+/* CONTACT */
+#contacto{padding:7rem 4rem;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:8rem}
+.ct-left .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.ct-left h2{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);line-height:1.2;margin-bottom:1.5rem}
+.ct-left h2 em{font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:300;font-size:3.2rem}
+.ct-left p{font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.45);font-weight:300;margin-bottom:2.5rem}
+.ct-info{display:flex;flex-direction:column;gap:1.2rem}
+.ct-row{display:flex;align-items:flex-start;gap:1.2rem}
+.ct-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);min-width:80px;margin-top:2px}
+.ct-val{font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300}
+.ct-form{display:flex;flex-direction:column;gap:1.5rem;padding-top:0.5rem}
+.fg{display:flex;flex-direction:column;gap:0.5rem}
+.fg label{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.fg input,.fg textarea{padding:0.9rem 0;border:none;border-bottom:1px solid rgba(255,255,255,0.12);background:transparent;font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--white);font-weight:300;outline:none;transition:border-color 0.25s}
+.fg input:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.2)}
+.fg textarea{height:100px;resize:none}
+.ct-submit{padding:1rem 2.8rem;background:var(--gold);color:var(--black);border:none;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background 0.25s;align-self:flex-start;margin-top:0.5rem}
+.ct-submit:hover{background:var(--gold-light)}
+
+/* FOOTER */
+footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{display:flex;flex-direction:column}
+.fl-main{font-family:'Montserrat',sans-serif;font-weight:200;font-size:0.85rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--white)}
+.fl-sub{font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-top:3px}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:0.65rem;letter-spacing:0.1em;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.6rem;color:rgba(255,255,255,0.15);letter-spacing:0.05em}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem}
+.wa-bubble{background:var(--white);border:1px solid var(--light-gray);border-radius:0;padding:0.9rem 1.1rem;font-size:0.75rem;color:var(--black);box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:200px;text-align:right;line-height:1.5;font-family:'Montserrat',sans-serif;font-weight:300}
+.wa-btn{width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);cursor:pointer;text-decoration:none;transition:transform 0.2s}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+
+/* RESPONSIVE */
+.col-collections{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:768px){.col-collections{grid-template-columns:1fr!important}}
+  nav{padding:1rem 1.5rem}
+  .hero-content{grid-template-columns:1fr;gap:2rem;padding:0 1.5rem}
+  .hero-center-line{display:none}
+  .logo-main{font-size:clamp(2.5rem,12vw,4rem)}
+  #coleccion,.about,.values,.testimonials,#contacto{padding:4rem 1.5rem}
+  .col-grid{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr}
+  .val-grid{grid-template-columns:1fr 1fr}
+  .test-grid{grid-template-columns:1fr}
+  #contacto{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP -->
+<div class="wa-float">
+  <div class="wa-bubble" id="waBubble">¡Hola! ¿Te ayudamos a encontrar tu joya perfecta? 💛</div>
+  <a class="wa-btn" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20una%20joya" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#coleccion">Catálogo</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;padding:0.45rem 1rem;border-radius:4px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-logo">
+    <div class="logo-main">Glamour</div>
+    <div style="display:flex;align-items:center;gap:1rem;margin-top:0.5rem">
+      <span class="logo-sub">by</span>
+      <img src="logo-suiza.jpeg" alt="Suiza Joyerías" style="height:120px;object-fit:contain;filter:grayscale(100%)">
+    </div>
+  </div>
+  <div class="hero-divider"></div>
+  <div class="hero-content hero-content-2col">
+    <div class="hero-left-text">
+      <div class="hero-eyebrow">Joyería Fina</div>
+      <div class="hero-headline">Nuestras<br>mejores<br>piezas</div>
+      <p class="hero-desc">Somos Glamour by Suiza, el lado online de <strong>Joyería Suiza Torreón</strong>. Más de 100 años haciendo brillar a todos — ahora te toca a ti.</p>
+      <div class="hero-actions">
+        <a href="#coleccion" class="btn-dark">Ver catálogo</a>
+      </div>
+    </div>
+    <div class="hero-right-text">
+      <div class="hero-stores">
+        <div class="hero-stores-label">Visítanos · 3 sucursales en Torreón</div>
+        <div class="hero-store">
+          <div class="hs-info">
+            <div class="hs-name">HEB Revolución</div>
+            <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
+          </div>
+          <a class="hs-map" href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwjg9ZeWy-aUAxUAAAAAHQAAAAAQBQ..i&pvq=Cg0vZy8xMWdocDU1NzloIhsKFWpveWVyaWEgc3VpemEgdG9ycmVvbhACGAM&lqi=ChVqb3llcmlhIHN1aXphIHRvcnJlb25Ir7rK0r6ugIAIWi0QABABEAIYABgBGAIiFWpveWVyaWEgc3VpemEgdG9ycmVvbioICAIQABABEAKSAQ1qZXdlbHJ5X3N0b3Jl&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=mx&sa=X&ftid=0x868fdb148328c06b:0x364e55554ea7ab00" target="_blank">Cómo llegar →</a>
+        </div>
+        <div class="hero-store">
+          <div class="hs-info">
+            <div class="hs-name">HEB Senderos</div>
+            <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
+          </div>
+          <a class="hs-map" href="https://www.google.com/maps/place/Joyer%C3%ADa+Suiza+Senderos/@25.6122171,-103.4000695,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x868fd10392516613:0x67e996349cf01ecd!8m2!3d25.6122171!4d-103.3974946!16s%2Fg%2F11h6rr6yh0" target="_blank">Cómo llegar →</a>
+        </div>
+        <div class="hero-store">
+          <div class="hs-info">
+            <div class="hs-name">Alsuper Campesino</div>
+            <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
+          </div>
+          <a class="hs-map" href="https://www.google.com/maps/place/Joyeria+Suiza+Alsuper+Campesino/@25.5745819,-103.3958246,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x868fdb6dc2e52f45:0x874cdebae102d4ca!8m2!3d25.574582!4d-103.3909537!16s%2Fg%2F11xcty6pbw" target="_blank">Cómo llegar →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">Oro 10k y 14k</span>
+    <span class="marquee-item">Diamantes certificados</span>
+    <span class="marquee-item">Joyería a medida</span>
+    <span class="marquee-item">Envíos a todo México</span>
+    
+    <span class="marquee-item">Sistema de apartado</span>
+    
+    <span class="marquee-item">Oro 10k y 14k</span>
+    <span class="marquee-item">Diamantes certificados</span>
+    <span class="marquee-item">Joyería a medida</span>
+    <span class="marquee-item">Envíos a todo México</span>
+    
+    <span class="marquee-item">Sistema de apartado</span>
+    
+  </div>
+</div>
+
+<!-- COLECCIONES -->
+<section id="coleccion" style="padding:7rem 4rem;background:var(--white)">
+  <div style="margin-bottom:3rem">
+    <div style="font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">Nuestro catálogo</div>
+    <div style="font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase">Catálogo</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem" class="col-collections">
+
+    <!-- INICIALES -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <img src="inicial-a.png" alt="Iniciales de oro" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Iniciales de Oro</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Todas las letras</div>
+        <a href="catalogo.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- MEDALLAS -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <img src="medalla-divino-nino.png" alt="Medallas religiosas" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Medallas Religiosas</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Varios santos</div>
+        <a href="medallas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- CADENAS -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Cadenas de Oro</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+        <a href="cadenas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- ESCLAVAS -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Esclavas de Oro</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+        <a href="esclavas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- BRILLANTERIA -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Brillantería</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Diamantes y piedras preciosas</div>
+        <a href="brillanteria.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- ESCLAVAS BEBE -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Esclavas de Bebé</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+        <a href="esclavas-bebe.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+    <!-- ARGOLLAS -->
+    <div style="background:var(--off);overflow:hidden">
+      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Argollas de Matrimonio</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+        <a href="argollas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="about-text">
+    <div class="eyebrow">Nuestra historia</div>
+    <h2>Nacimos en<br>una joyería</h2>
+    <p>Glamour by Suiza es el lado digital de Joyería Suiza Torreón, una joyería física con más de 100 años en el corazón de la gente.</p>
+    <p>Decidimos abrir este espacio porque había mucha gente que quería una pieza nuestra pero no podía venir hasta acá. Y pensamos: ¿por qué no llevarles la joyería a todos?</p>
+    <a href="#contacto" class="about-link">Cuéntanos qué buscas →</a>
+  </div>
+  <div class="about-stats">
+    <div class="a-stat">
+      <div class="num">100+</div>
+      <div class="label">Años de historia</div>
+    </div>
+    <div class="a-stat">
+      <div class="a-materials">Oro de 10 y 14 kilates, brillantería, plata, chapa y acero inoxidable.</div>
+      <div class="label">Lo que manejamos</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="val-header">
+    <div class="val-eyebrow">Por qué somos diferentes</div>
+    <div class="val-title">No vendemos joyas.<br>Vendemos recuerdos.</div>
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="test-header">
+    <div class="test-eyebrow">Lo que dicen nuestros clientes</div>
+    <div class="test-title">Ellos ya confían en nosotros</div>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-quote">Los precios me parecieron excelentes en relación a su calidad, sobre todo en cadenas de oro. Además me personalizaron un dije y quedó igual a como se los había pedido.</div>
+      <div class="test-divider"></div>
+      <div class="test-author">Mario · Reseña de Google · Sucursal HEB Senderos</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★<span style="opacity:0.3">★</span></div>
+      <div class="test-quote">Muy buen servicio y atentas. Se les juntó gente y supieron manejarlo perfectamente, con amabilidad y atención a cada uno. Cuentan con taller de joyería y además tienen joyas muy bonitas. Yo sí la recomiendo.</div>
+      <div class="test-divider"></div>
+      <div class="test-author">Ruben · Reseña de Google · Sucursal HEB Revolución</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-quote">Compré una cadena con un dije de oro a súper buen precio. ¡Muy buena atención!</div>
+      <div class="test-divider"></div>
+      <div class="test-author">Daniel · Reseña de Google · Sucursal HEB Revolución</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="ct-left">
+    <div class="eyebrow">Hablemos</div>
+    <h2>Dinos qué tienes<br>en <em>mente</em></h2>
+    <p>No necesitas saber exactamente qué quieres. Cuéntanos la ocasión, para quién es — nosotros hacemos el resto.</p>
+    <div class="ct-info">
+      <div class="ct-row"><span class="ct-label">Ubicación</span><span class="ct-val">Torreón, Coahuila, México</span></div>
+      <div class="ct-row"><span class="ct-label">WhatsApp</span><span class="ct-val">+52 (871) 507 6880</span></div>
+      <div class="ct-row"><span class="ct-label">Horario</span><span class="ct-val">Lun – Dom · 10:30 – 20:30</span></div>
+    </div>
+  </div>
+  <div class="ct-form">
+    <div class="fg"><label>Tu nombre</label><input type="text" placeholder="¿Cómo te llamamos?"></div>
+    <div class="fg"><label>Correo electrónico</label><input type="email" placeholder="correo@ejemplo.com"></div>
+    <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="+52"></div>
+    <div class="fg"><label>¿Qué buscas?</label><textarea placeholder="Cuéntanos todo. Entre más nos digas, mejor te ayudamos 💛"></textarea></div>
+    <button class="ct-submit">Quiero esta joya 💛</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span class="fl-main">Glamour by Suiza</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank">Instagram</a>
+    <a href="#contacto">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2026 Glamour by Suiza · Todos los derechos reservados</div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+setTimeout(()=>{const b=document.getElementById('waBubble');if(b)b.style.display='none';},6000);
+</script>
+</body>
+</html>
