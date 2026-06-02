@@ -30,12 +30,12 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .has-dropdown{position:relative}
 .dd-toggle{display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer}
 .dd-toggle .dd-caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform 0.25s}
-.has-dropdown:hover .dd-toggle{color:var(--black)}
-.has-dropdown:hover .dd-caret{transform:rotate(225deg) translateY(-1px)}
+@media(hover:hover){.has-dropdown:hover .dd-toggle{color:var(--black)}
+.has-dropdown:hover .dd-caret{transform:rotate(225deg) translateY(-1px)}}
 .dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:230px;background:var(--white);border:1px solid var(--border);box-shadow:0 18px 50px -12px rgba(10,10,10,0.18);padding:0.6rem 0;opacity:0;visibility:hidden;transition:opacity 0.22s ease,transform 0.22s ease;z-index:200}
 .dd-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
 .dd-menu::after{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border)}
-.has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media(hover:hover){.has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}}
 /* Estado abierto por toque (celular) */
 .has-dropdown.open .dd-toggle{color:var(--black)}
 .has-dropdown.open .dd-caret{transform:rotate(225deg) translateY(-1px)}
@@ -274,21 +274,21 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
         <div class="hero-stores-label">Visítanos · 3 sucursales en Torreón</div>
         <div class="hero-store">
           <div class="hs-info">
-            <div class="hs-name">HEB Revolución</div>
+            <div class="hs-name">📍 HEB Revolución</div>
             <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
           </div>
           <a class="hs-map" href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwjg9ZeWy-aUAxUAAAAAHQAAAAAQBQ..i&pvq=Cg0vZy8xMWdocDU1NzloIhsKFWpveWVyaWEgc3VpemEgdG9ycmVvbhACGAM&lqi=ChVqb3llcmlhIHN1aXphIHRvcnJlb25Ir7rK0r6ugIAIWi0QABABEAIYABgBGAIiFWpveWVyaWEgc3VpemEgdG9ycmVvbioICAIQABABEAKSAQ1qZXdlbHJ5X3N0b3Jl&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=mx&sa=X&ftid=0x868fdb148328c06b:0x364e55554ea7ab00" target="_blank">Cómo llegar →</a>
         </div>
         <div class="hero-store">
           <div class="hs-info">
-            <div class="hs-name">HEB Senderos</div>
+            <div class="hs-name">📍 HEB Senderos</div>
             <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
           </div>
           <a class="hs-map" href="https://www.google.com/maps/place/Joyer%C3%ADa+Suiza+Senderos/@25.6122171,-103.4000695,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x868fd10392516613:0x67e996349cf01ecd!8m2!3d25.6122171!4d-103.3974946!16s%2Fg%2F11h6rr6yh0" target="_blank">Cómo llegar →</a>
         </div>
         <div class="hero-store">
           <div class="hs-info">
-            <div class="hs-name">Alsuper Campesino</div>
+            <div class="hs-name">📍 Alsuper Campesino</div>
             <div class="hs-meta">Lun – Dom · 10:30 – 20:30</div>
           </div>
           <a class="hs-map" href="https://www.google.com/maps/place/Joyeria+Suiza+Alsuper+Campesino/@25.5745819,-103.3958246,1031m/data=!3m2!1e3!4b1!4m6!3m5!1s0x868fdb6dc2e52f45:0x874cdebae102d4ca!8m2!3d25.574582!4d-103.3909537!16s%2Fg%2F11xcty6pbw" target="_blank">Cómo llegar →</a>

@@ -23,12 +23,14 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .has-dropdown{position:relative}
 .dd-toggle{display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer}
 .dd-toggle .dd-caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform 0.25s}
-.has-dropdown:hover .dd-toggle,.has-dropdown.open .dd-toggle{color:var(--black)}
-.has-dropdown:hover .dd-caret,.has-dropdown.open .dd-caret{transform:rotate(225deg) translateY(-1px)}
+.has-dropdown.open .dd-toggle{color:var(--black)}
+.has-dropdown.open .dd-caret{transform:rotate(225deg) translateY(-1px)}
+@media(hover:hover){.has-dropdown:hover .dd-toggle{color:var(--black)}.has-dropdown:hover .dd-caret{transform:rotate(225deg) translateY(-1px)}}
 .dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:230px;background:var(--white);border:1px solid var(--border);box-shadow:0 18px 50px -12px rgba(10,10,10,0.18);padding:0.6rem 0;opacity:0;visibility:hidden;transition:opacity 0.22s ease,transform 0.22s ease;z-index:200}
 .dd-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
 .dd-menu::after{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border)}
-.has-dropdown:hover .dd-menu,.has-dropdown.open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.has-dropdown.open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media(hover:hover){.has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}}
 .dd-menu a{display:block;padding:0.62rem 1.4rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:0.02em;text-transform:none;color:var(--gray);white-space:nowrap;transition:color 0.18s,background 0.18s,padding-left 0.18s}
 .dd-menu a:hover{color:var(--black);background:var(--off);padding-left:1.7rem}
 .dd-menu a.dd-active{color:var(--gold)}
