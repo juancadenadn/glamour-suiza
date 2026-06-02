@@ -26,6 +26,20 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{text-decoration:none;font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);transition:color 0.2s}
 .nav-links a:hover{color:var(--black)}
+/* Dropdown Catálogo */
+.has-dropdown{position:relative}
+.dd-toggle{display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer}
+.dd-toggle .dd-caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform 0.25s}
+.has-dropdown:hover .dd-toggle{color:var(--black)}
+.has-dropdown:hover .dd-caret{transform:rotate(225deg) translateY(-1px)}
+.dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:230px;background:var(--white);border:1px solid var(--border);box-shadow:0 18px 50px -12px rgba(10,10,10,0.18);padding:0.6rem 0;opacity:0;visibility:hidden;transition:opacity 0.22s ease,transform 0.22s ease;z-index:200}
+.dd-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
+.dd-menu::after{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border)}
+.has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dd-menu a{display:block;padding:0.62rem 1.4rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:0.02em;text-transform:none;color:var(--gray);white-space:nowrap;transition:color 0.18s,background 0.18s,padding-left 0.18s}
+.dd-menu a:hover{color:var(--black);background:var(--off);padding-left:1.7rem}
+.dd-menu .dd-all{margin-top:0.4rem;padding-top:0.7rem;border-top:1px solid var(--border);font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+.dd-menu .dd-all:hover{color:var(--gold);background:var(--off)}
 .nav-right{display:flex;align-items:center;gap:2rem}
 .nav-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;font-weight:500;color:var(--gold);white-space:nowrap;letter-spacing:0.01em;pointer-events:none}
 @media(max-width:760px){.nav-center{font-size:0.95rem}}
@@ -197,7 +211,20 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 <nav>
   <ul class="nav-links">
     <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#coleccion">Catálogo</a></li>
+    <li class="has-dropdown">
+      <a href="#coleccion" class="dd-toggle">Catálogo <span class="dd-caret"></span></a>
+      <!-- COLECCIONES: para agregar una nueva, solo copia una línea <a> y cambia el texto y el href -->
+      <div class="dd-menu">
+        <a href="catalogo.html">Iniciales de Oro</a>
+        <a href="medallas.html">Medallas Religiosas</a>
+        <a href="cadenas.html">Cadenas de Oro</a>
+        <a href="esclavas.html">Esclavas de Oro</a>
+        <a href="brillanteria.html">Brillantería</a>
+        <a href="esclavas-bebe.html">Esclavas de Bebé</a>
+        <a href="argollas.html">Argollas de Matrimonio</a>
+        <a href="#coleccion" class="dd-all">Ver todo el catálogo →</a>
+      </div>
+    </li>
   </ul>
 
   <div class="nav-center">¡Reparamos tu joyería de oro y plata!</div>
