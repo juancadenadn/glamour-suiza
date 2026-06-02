@@ -65,6 +65,11 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .piece{display:flex;flex-direction:column}
 .piece-img{position:relative;aspect-ratio:1/1;background:var(--off);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .piece-img img{width:100%;height:100%;object-fit:contain;padding:6%;transition:transform 0.6s ease}
+.photo-rotator{position:absolute;inset:0;background:var(--off)}
+.photo-rotator img{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 0.9s ease}
+.photo-rotator img.is-active{opacity:1}
+.photo-rotator img.rot-catalogo{object-fit:contain;padding:6%}
+.photo-rotator img.rot-cuello{object-fit:cover;padding:0}
 .piece-img--empty{display:flex;align-items:center;justify-content:center}
 .ph{display:flex;flex-direction:column;align-items:center;gap:0.9rem}
 .ph span{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);opacity:0.6}
@@ -157,58 +162,79 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
 <!-- PIEZAS -->
 <section class="pieces">
   <div class="pieces-bar">
-    <div class="pieces-count">Fotos próximamente · pregunta por tu modelo</div>
+    <div class="pieces-count">4 grosores disponibles · de 1 a 4 mm</div>
     <div class="pieces-note">Distintos tejidos y grosores</div>
   </div>
   <div class="grid">
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
+      <div class="piece-img">
+        <span class="piece-tag">1 mm</span>
+        <div class="photo-rotator" data-rotator>
+          <img src="torsal-1mm.png" class="rot-catalogo is-active" alt="Cadena torzal 1mm en oro">
+          <img src="torsal-1mm-cuello.png" class="rot-cuello" alt="Cadena torzal 1mm puesta en el cuello">
         </div>
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Cadena · Oro</div>
-        <h3 class="piece-name">Cadena Modelo 1</h3>
+        <div class="piece-cat">Cadena · Torzal</div>
+        <h3 class="piece-name">Torzal 1 mm</h3>
         <div class="piece-meta">Oro amarillo</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20una%20cadena%20de%20oro%20(Modelo%201)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20cadena%20Torzal%20de%201mm%20en%20oro%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
+      <div class="piece-img">
+        <span class="piece-tag">2 mm</span>
+        <div class="photo-rotator" data-rotator>
+          <img src="torsal-2mm.png" class="rot-catalogo is-active" alt="Cadena torzal 2mm en oro">
+          <img src="torsal-2mm-cuello.png" class="rot-cuello" alt="Cadena torzal 2mm puesta en el cuello">
         </div>
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Cadena · Oro</div>
-        <h3 class="piece-name">Cadena Modelo 2</h3>
+        <div class="piece-cat">Cadena · Torzal</div>
+        <h3 class="piece-name">Torzal 2 mm</h3>
         <div class="piece-meta">Oro amarillo</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20una%20cadena%20de%20oro%20(Modelo%202)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20cadena%20Torzal%20de%202mm%20en%20oro%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
+      <div class="piece-img">
+        <span class="piece-tag">3 mm</span>
+        <div class="photo-rotator" data-rotator>
+          <img src="torsal-3mm.png" class="rot-catalogo is-active" alt="Cadena torzal 3mm en oro">
+          <img src="torsal-3mm-cuello.png" class="rot-cuello" alt="Cadena torzal 3mm puesta en el cuello">
         </div>
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Cadena · Oro</div>
-        <h3 class="piece-name">Cadena Modelo 3</h3>
+        <div class="piece-cat">Cadena · Torzal</div>
+        <h3 class="piece-name">Torzal 3 mm</h3>
         <div class="piece-meta">Oro amarillo</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20una%20cadena%20de%20oro%20(Modelo%203)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20cadena%20Torzal%20de%203mm%20en%20oro%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">4 mm</span>
+        <div class="photo-rotator" data-rotator>
+          <img src="torsal-4mm.png" class="rot-catalogo is-active" alt="Cadena torzal 4mm en oro">
+          <img src="torsal-4mm-cuello.png" class="rot-cuello" alt="Cadena torzal 4mm puesta en el cuello">
+        </div>
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Cadena · Torzal</div>
+        <h3 class="piece-name">Torzal 4 mm</h3>
+        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20cadena%20Torzal%20de%204mm%20en%20oro%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
@@ -240,6 +266,18 @@ if(dd){
   document.addEventListener('click', e=>{ if(!dd.contains(e.target)) dd.classList.remove('open'); });
   dd.querySelectorAll('.dd-menu a').forEach(a=>a.addEventListener('click', ()=> dd.classList.remove('open')));
 }
+
+// Rotador de fotos en piezas (catálogo ↔ cuello)
+document.querySelectorAll('[data-rotator]').forEach(r=>{
+  const imgs = r.querySelectorAll('img');
+  if(imgs.length < 2) return;
+  let i = 0;
+  setInterval(()=>{
+    imgs[i].classList.remove('is-active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('is-active');
+  }, 2600);
+});
 </script>
 </body>
 </html>
