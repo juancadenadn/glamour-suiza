@@ -74,6 +74,16 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .piece-cat{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
 .piece-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.2;margin-bottom:0.5rem}
 .piece-meta{font-size:0.72rem;line-height:1.7;color:var(--gray);font-weight:300;margin-bottom:1.1rem}
+.opt-toggle{display:inline-flex;border:1px solid var(--border);margin-bottom:1.1rem;align-self:flex-start}
+.opt-toggle button{font-family:'Montserrat',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;background:var(--white);color:var(--gray);border:none;cursor:pointer;transition:background 0.2s,color 0.2s}
+.opt-toggle button + button{border-left:1px solid var(--border)}
+.opt-toggle button.active{background:var(--black);color:var(--white)}
+.pair-size{margin-bottom:1.1rem}
+.pair-size[hidden]{display:none}
+.pair-label{display:block;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem}
+.pair-opts{display:flex;gap:0.4rem}
+.pair-opts button{min-width:34px;height:34px;font-family:'Montserrat',sans-serif;font-size:0.62rem;background:var(--white);border:1px solid var(--border);color:var(--gray);cursor:pointer;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.pair-opts button.active{background:var(--black);border-color:var(--black);color:var(--white)}
 .piece-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--light-gray)}
 .piece-price{font-size:0.72rem;letter-spacing:0.04em;color:var(--black);font-weight:500}
 .piece-price em{font-style:normal;color:var(--gray);font-weight:300;font-size:0.62rem}
@@ -157,58 +167,128 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
 <!-- PIEZAS -->
 <section class="pieces">
   <div class="pieces-bar">
-    <div class="pieces-count">Fotos próximamente · pregunta por tu modelo</div>
-    <div class="pieces-note">Hechas a su medida</div>
+    <div class="pieces-count">Modelo liso · oro amarillo y blanco · 3 a 6 mm</div>
+    <div class="pieces-note">Hechas para toda la vida</div>
   </div>
   <div class="grid">
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
-        </div>
+      <div class="piece-img">
+        <span class="piece-tag">3 mm</span>
+        <img src="AR10-060503-3mm.jpg" alt="Argolla lisa 3mm en oro">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Argolla · Matrimonio</div>
-        <h3 class="piece-name">Argollas Modelo 1</h3>
-        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-cat">Argolla lisa · Oro amarillo</div>
+        <h3 class="piece-name">Lisa · 3 mm</h3>
+        <div class="piece-meta">Oro amarillo 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%201)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%203mm%20en%20oro%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
-        </div>
+      <div class="piece-img">
+        <span class="piece-tag">4 mm</span>
+        <img src="AR10-0605004-4mm.jpg" alt="Argolla lisa 4mm en oro">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Argolla · Matrimonio</div>
-        <h3 class="piece-name">Argollas Modelo 2</h3>
-        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-cat">Argolla lisa · Oro amarillo</div>
+        <h3 class="piece-name">Lisa · 4 mm</h3>
+        <div class="piece-meta">Oro amarillo 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%202)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%204mm%20en%20oro%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
-      <div class="piece-img piece-img--empty">
-        <div class="ph">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
-          <span>Foto próximamente</span>
-        </div>
+      <div class="piece-img">
+        <span class="piece-tag">5 mm</span>
+        <img src="AR10-060505-5mm.jpg" alt="Argolla lisa 5mm en oro">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Argolla · Matrimonio</div>
-        <h3 class="piece-name">Argollas Modelo 3</h3>
-        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-cat">Argolla lisa · Oro amarillo</div>
+        <h3 class="piece-name">Lisa · 5 mm</h3>
+        <div class="piece-meta">Oro amarillo 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%203)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%205mm%20en%20oro%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">6 mm</span>
+        <img src="AR10-060506-6mm.jpg" alt="Argolla lisa 6mm en oro">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla lisa · Oro amarillo</div>
+        <h3 class="piece-name">Lisa · 6 mm</h3>
+        <div class="piece-meta">Oro amarillo 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%206mm%20en%20oro%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+  
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">3 mm</span>
+        <img src="AR10-B60503-3mm.jpg" alt="Argolla lisa de oro blanco 3mm">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla lisa · Oro blanco</div>
+        <h3 class="piece-name">Lisa · 3 mm</h3>
+        <div class="piece-meta">Oro blanco 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%20oro%20blanco%20de%203mm%20en%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">4 mm</span>
+        <img src="AR10-B60504-4mm.jpg" alt="Argolla lisa de oro blanco 4mm">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla lisa · Oro blanco</div>
+        <h3 class="piece-name">Lisa · 4 mm</h3>
+        <div class="piece-meta">Oro blanco 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%20oro%20blanco%20de%204mm%20en%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">5 mm</span>
+        <img src="AR10-B60505-5mm.jpg" alt="Argolla lisa de oro blanco 5mm">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla lisa · Oro blanco</div>
+        <h3 class="piece-name">Lisa · 5 mm</h3>
+        <div class="piece-meta">Oro blanco 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%20oro%20blanco%20de%205mm%20en%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">6 mm</span>
+        <img src="AR10-B60506-6mm.jpg" alt="Argolla lisa de oro blanco 6mm">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla lisa · Oro blanco</div>
+        <h3 class="piece-name">Lisa · 6 mm</h3>
+        <div class="piece-meta">Oro blanco 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20argolla%20Lisa%20de%20oro%20blanco%20de%206mm%20en%2010k%20o%2014k%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
