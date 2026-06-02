@@ -338,8 +338,12 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
     <!-- MEDALLAS -->
     <div style="background:var(--off);overflow:hidden">
       <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
-        <img src="medalla-divino-nino.png" alt="Medallas religiosas" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent)">
+        <div class="photo-rotator" data-rotator>
+          <img src="medalla-divino-nino.png" class="is-active" alt="Medalla Divino Niño">
+          <img src="sagrado-corazon-oval.png" alt="Medalla Sagrado Corazón ovalada">
+          <img src="sagrado-corazon-rect.png" alt="Medalla Sagrado Corazón rectangular">
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
           <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Medallas Religiosas</div>
         </div>
@@ -554,6 +558,18 @@ if(dd){
 }
 
 setTimeout(()=>{const b=document.getElementById('waBubble');if(b)b.style.display='none';},6000);
+
+// Rotador de fotos — alterna las imágenes con fundido suave
+document.querySelectorAll('[data-rotator]').forEach(r=>{
+  const imgs = r.querySelectorAll('img');
+  if(imgs.length < 2) return;
+  let i = 0;
+  setInterval(()=>{
+    imgs[i].classList.remove('is-active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('is-active');
+  }, 2600);
+});
 </script>
 </body>
 </html>
