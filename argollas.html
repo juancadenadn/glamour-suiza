@@ -4,42 +4,242 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Argollas de Matrimonio · Glamour by Suiza</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#0A0A0A;--white:#FFFFFF;--off:#F8F7F5;--gold:#C4A55A;--gray:#6B6B6B;--light-gray:#E8E8E8}
-body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.08)}
-.nav-logo{font-family:'Montserrat',sans-serif;font-weight:200;font-size:0.85rem;letter-spacing:0.4em;text-transform:uppercase;text-decoration:none;color:var(--black)}
-.nav-back{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--light-gray);padding-bottom:1px}
-.nav-back:hover{color:var(--black);border-color:var(--black)}
-.hero{padding:10rem 4rem 5rem;text-align:center}
-.eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-h1{font-family:'Montserrat',sans-serif;font-weight:200;font-size:3.5rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem}
-.subtitle{font-size:0.82rem;color:var(--gray);font-weight:300;line-height:1.8}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 4rem 6rem}
-.item{cursor:pointer}
-.img-wrap{background:var(--off);aspect-ratio:1/1;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--light-gray)}
-.placeholder span{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)}
-.meta{padding:1rem 0 0}
-.name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:0.3rem}
-.detail{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-bottom:0.8rem}
-.btn{display:inline-block;padding:0.7rem 1.8rem;background:var(--black);color:var(--white);text-decoration:none;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;transition:background 0.25s;border:1px solid var(--black)}
-.btn:hover{background:var(--gold);border-color:var(--gold)}
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999}
-.wa-btn{width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);text-decoration:none}
+:root{
+  --black:#0A0A0A;--white:#FFFFFF;--off:#F8F7F5;--gold:#C4A55A;--gold-light:#E2CC91;
+  --gray:#6B6B6B;--light-gray:#E8E8E8;--border:rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(252,250,246,0.97);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(196,165,90,0.25)}
+nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold) 35%,#B8923E 65%,var(--gold-light))}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--black)}
+.has-dropdown{position:relative}
+.dd-toggle{display:inline-flex;align-items:center;gap:0.4rem;cursor:pointer}
+.dd-toggle .dd-caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform 0.25s}
+.has-dropdown.open .dd-toggle{color:var(--black)}
+.has-dropdown.open .dd-caret{transform:rotate(225deg) translateY(-1px)}
+@media(hover:hover){.has-dropdown:hover .dd-toggle{color:var(--black)}.has-dropdown:hover .dd-caret{transform:rotate(225deg) translateY(-1px)}}
+.dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:230px;background:var(--white);border:1px solid var(--border);box-shadow:0 18px 50px -12px rgba(10,10,10,0.18);padding:0.6rem 0;opacity:0;visibility:hidden;transition:opacity 0.22s ease,transform 0.22s ease;z-index:200}
+.dd-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
+.dd-menu::after{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border)}
+.has-dropdown.open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media(hover:hover){.has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}}
+.dd-menu a{display:block;padding:0.62rem 1.4rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:0.02em;text-transform:none;color:var(--gray);white-space:nowrap;transition:color 0.18s,background 0.18s,padding-left 0.18s}
+.dd-menu a:hover{color:var(--black);background:var(--off);padding-left:1.7rem}
+.dd-menu a.dd-active{color:var(--gold)}
+.dd-menu .dd-all{margin-top:0.4rem;padding-top:0.7rem;border-top:1px solid var(--border);font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+.nav-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;font-weight:500;color:var(--gold);white-space:nowrap;pointer-events:none}
+@media(max-width:760px){.nav-center{font-size:0.95rem}}
+@media(max-width:560px){.nav-center{display:none}}
+
+/* CABECERA DE COLECCIÓN */
+.cat-hero{padding:8.5rem 4rem 3rem;text-align:center;background:var(--off)}
+.crumb{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray);margin-bottom:1.5rem}
+.crumb a{color:var(--gray);text-decoration:none;transition:color 0.2s}
+.crumb a:hover{color:var(--gold)}
+.crumb span{color:var(--gold)}
+.cat-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--gold);margin-bottom:0.6rem}
+.cat-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:0.12em;text-transform:uppercase;line-height:1.1}
+.cat-desc{max-width:540px;margin:1.4rem auto 0;font-size:0.85rem;line-height:2;color:var(--gray);font-weight:300}
+
+/* MARQUEE */
+.marquee{background:var(--black);padding:0.9rem 0;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:inline-flex;animation:marquee 25s linear infinite}
+.marquee-item{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
+.marquee-item::after{content:'✦';color:var(--gold);font-size:0.5rem}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* CUADRÍCULA DE PIEZAS */
+.pieces{padding:5rem 4rem 7rem;max-width:1280px;margin:0 auto}
+.pieces-bar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.5rem;flex-wrap:wrap;gap:0.5rem}
+.pieces-count{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray)}
+.pieces-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 2rem}
+.piece{display:flex;flex-direction:column}
+.piece-img{position:relative;aspect-ratio:1/1;background:var(--off);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.piece-img img{width:100%;height:100%;object-fit:contain;padding:6%;transition:transform 0.6s ease}
+.piece-img--empty{display:flex;align-items:center;justify-content:center}
+.ph{display:flex;flex-direction:column;align-items:center;gap:0.9rem}
+.ph span{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);opacity:0.6}
+.piece:hover .piece-img img{transform:scale(1.06)}
+.piece-tag{position:absolute;top:0.9rem;left:0.9rem;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--black);background:rgba(255,255,255,0.9);padding:0.35rem 0.7rem;border:1px solid var(--border)}
+.piece-body{padding:1.3rem 0 0;display:flex;flex-direction:column;flex:1}
+.piece-cat{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.piece-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.2;margin-bottom:0.5rem}
+.piece-meta{font-size:0.72rem;line-height:1.7;color:var(--gray);font-weight:300;margin-bottom:1.1rem}
+.piece-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--light-gray)}
+.piece-price{font-size:0.72rem;letter-spacing:0.04em;color:var(--black);font-weight:500}
+.piece-price em{font-style:normal;color:var(--gray);font-weight:300;font-size:0.62rem}
+.piece-cta{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color 0.2s}
+.piece-cta:hover{color:var(--gold)}
+
+/* FOOTER */
+footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.fl-main{font-family:'Montserrat',sans-serif;font-weight:200;font-size:0.85rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--white)}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{color:rgba(255,255,255,0.3);text-decoration:none;font-size:0.65rem;letter-spacing:0.1em;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.6rem;color:rgba(255,255,255,0.15)}
+
+/* WHATSAPP */
+.wa-btn{position:fixed;bottom:2rem;right:2rem;z-index:999;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:transform 0.2s}
+.wa-btn:hover{transform:scale(1.08)}
 .wa-btn svg{width:28px;height:28px;fill:#fff}
-@media(max-width:768px){nav{padding:1rem 1.5rem}.hero{padding:7rem 1.5rem 3rem}h1{font-size:2.2rem}.grid{grid-template-columns:1fr 1fr;gap:1rem;padding:2rem 1.5rem 4rem}}
+
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .cat-hero{padding:7rem 1.5rem 2.5rem}
+  .pieces{padding:3rem 1.5rem 5rem}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="wa-float"><a class="wa-btn" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesan%20las%20argollas%20de%20oro%20%F0%9F%92%9B" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div>
-<nav><a href="index.html" class="nav-back">← Regresar</a><a href="index.html" class="nav-logo">Glamour by Suiza</a><a href="https://wa.me/528715076880" target="_blank" class="nav-back">WhatsApp</a></nav>
-<div class="hero"><div class="eyebrow">Catálogo</div><h1>Argollas de Matrimonio</h1><p class="subtitle">Cadenas en oro 10k y 14k · Hechas a mano en Torreón<br>Pregunta por la tuya y te cotizamos al momento</p></div>
-<div class="grid">
-  <div class="item"><div class="img-wrap"><div class="placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg><span>Foto próximamente</span></div></div><div class="meta"><div class="name">Argolla Modelo 1</div><div class="detail">Oro 10k y 14k</div><a href="https://wa.me/528715076880?text=Hola%2C%20me%20interesan%20las%20argollas%20de%20oro%20%F0%9F%92%9B" target="_blank" class="btn">Preguntar precio</a></div></div>
-  <div class="item"><div class="img-wrap"><div class="placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg><span>Foto próximamente</span></div></div><div class="meta"><div class="name">Argolla Modelo 2</div><div class="detail">Oro 10k y 14k</div><a href="https://wa.me/528715076880?text=Hola%2C%20me%20interesan%20las%20argollas%20de%20oro%20%F0%9F%92%9B" target="_blank" class="btn">Preguntar precio</a></div></div>
-  <div class="item"><div class="img-wrap"><div class="placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg><span>Foto próximamente</span></div></div><div class="meta"><div class="name">Argolla Modelo 3</div><div class="detail">Oro 10k y 14k</div><a href="https://wa.me/528715076880?text=Hola%2C%20me%20interesan%20las%20argollas%20de%20oro%20%F0%9F%92%9B" target="_blank" class="btn">Preguntar precio</a></div></div>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="has-dropdown">
+      <a href="index.html#coleccion" class="dd-toggle active">Catálogo <span class="dd-caret"></span></a>
+      <div class="dd-menu">
+        <a href="iniciales.html">Iniciales de Oro</a>
+        <a href="medallas.html">Medallas Religiosas</a>
+        <a href="cadenas.html">Cadenas de Oro</a>
+        <a href="esclavas.html">Esclavas de Oro</a>
+        <a href="brillanteria.html">Brillantería</a>
+        <a href="esclavas-bebe.html">Esclavas de Bebé</a>
+        <a href="argollas.html" class="dd-active">Argollas de Matrimonio</a>
+        <a href="index.html#coleccion" class="dd-all">Ver todo el catálogo →</a>
+      </div>
+    </li>
+  </ul>
+  <div class="nav-center">¡Reparamos tu joyería de oro y plata!</div>
+  <div class="nav-right">
+    <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;padding:0.45rem 1rem;border-radius:4px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+</nav>
+
+<!-- CABECERA -->
+<section class="cat-hero">
+  <div class="crumb"><a href="index.html">Inicio</a> · <a href="index.html#coleccion">Catálogo</a> · <span>Argollas de Matrimonio</span></div>
+  <div class="cat-eyebrow">Para toda la vida</div>
+  <h1 class="cat-title">Argollas de Matrimonio</h1>
+  <p class="cat-desc">Argollas de matrimonio en oro 10k y 14k: lisas, diamantadas o grabadas. Las hacemos a tu medida — pregunta por el par que buscan y los cotizamos al momento.  </p>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">Joyería oro 10 y 14k</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
+    <span class="marquee-item">Reparación de joyería</span>
+    <span class="marquee-item">Joyería oro 10 y 14k</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
+    <span class="marquee-item">Reparación de joyería</span>
+  </div>
 </div>
-</body></html>
+
+<!-- PIEZAS -->
+<section class="pieces">
+  <div class="pieces-bar">
+    <div class="pieces-count">Fotos próximamente · pregunta por tu modelo</div>
+    <div class="pieces-note">Hechas a su medida</div>
+  </div>
+  <div class="grid">
+
+    <article class="piece">
+      <div class="piece-img piece-img--empty">
+        <div class="ph">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
+          <span>Foto próximamente</span>
+        </div>
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla · Matrimonio</div>
+        <h3 class="piece-name">Argollas Modelo 1</h3>
+        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%201)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img piece-img--empty">
+        <div class="ph">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
+          <span>Foto próximamente</span>
+        </div>
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla · Matrimonio</div>
+        <h3 class="piece-name">Argollas Modelo 2</h3>
+        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%202)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img piece-img--empty">
+        <div class="ph">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#C4A55A" stroke-width="1.2" opacity="0.55"><rect x="3.5" y="8" width="7" height="4.5" rx="2.25"/><rect x="13.5" y="11.5" width="7" height="4.5" rx="2.25"/></svg>
+          <span>Foto próximamente</span>
+        </div>
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Argolla · Matrimonio</div>
+        <h3 class="piece-name">Argollas Modelo 3</h3>
+        <div class="piece-meta">Oro amarillo</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20un%20par%20de%20argollas%20de%20matrimonio%20(Modelo%203)%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="fl-main">Glamour by Suiza</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank">Instagram</a>
+    <a href="https://wa.me/528715076880" target="_blank">WhatsApp</a>
+    <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+  </div>
+  <div class="footer-copy">© 2026 Glamour by Suiza · Todos los derechos reservados</div>
+</footer>
+
+<a class="wa-btn" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesan%20las%20argollas%20de%20matrimonio" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const sinHover = () => window.matchMedia('(hover: none), (max-width: 768px)').matches;
+const dd = document.querySelector('.has-dropdown');
+if(dd){
+  const tog = dd.querySelector('.dd-toggle');
+  tog.addEventListener('click', e=>{ if(sinHover()){ e.preventDefault(); dd.classList.toggle('open'); }});
+  document.addEventListener('click', e=>{ if(!dd.contains(e.target)) dd.classList.remove('open'); });
+  dd.querySelectorAll('.dd-menu a').forEach(a=>a.addEventListener('click', ()=> dd.classList.remove('open')));
+}
+</script>
+</body>
+</html>
