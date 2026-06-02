@@ -83,6 +83,14 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .scroll-line{width:1px;height:40px;background:var(--black);animation:scrollAnim 2s ease-in-out infinite}
 @keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
+/* PHOTO ROTATOR — alterna foto fondo blanco / puesta en cuello */
+.photo-rotator{position:absolute;inset:0;width:100%;height:100%}
+.photo-rotator img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease}
+.photo-rotator img.is-active{opacity:1}
+.rotator-dots{position:absolute;top:1rem;right:1rem;z-index:3;display:flex;gap:0.4rem}
+.rotator-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.45);transition:background 0.3s,transform 0.3s}
+.rotator-dots span.on{background:var(--gold);transform:scale(1.25)}
+
 /* MARQUEE */
 .marquee{background:var(--black);padding:0.9rem 0;overflow:hidden;white-space:nowrap}
 .marquee-inner{display:inline-flex;animation:marquee 25s linear infinite}
@@ -288,20 +296,15 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-inner">
-    <span class="marquee-item">Oro 10k y 14k</span>
-    <span class="marquee-item">Diamantes certificados</span>
-    <span class="marquee-item">Joyería a medida</span>
-    <span class="marquee-item">Envíos a todo México</span>
-    
-    <span class="marquee-item">Sistema de apartado</span>
-    
-    <span class="marquee-item">Oro 10k y 14k</span>
-    <span class="marquee-item">Diamantes certificados</span>
-    <span class="marquee-item">Joyería a medida</span>
-    <span class="marquee-item">Envíos a todo México</span>
-    
-    <span class="marquee-item">Sistema de apartado</span>
-    
+    <span class="marquee-item">Joyería oro 10 y 14k</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
+    <span class="marquee-item">Reparación de joyería</span>
+
+    <span class="marquee-item">Joyería oro 10 y 14k</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
+    <span class="marquee-item">Reparación de joyería</span>
   </div>
 </div>
 
@@ -375,10 +378,10 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 
     <!-- BRILLANTERIA -->
     <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <img src="brillante-amatista-1.jpg" alt="Anillo de amatista con diamantes" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent)">
+          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Brillantería</div>
         </div>
       </div>
