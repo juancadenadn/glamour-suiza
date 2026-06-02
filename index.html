@@ -36,6 +36,10 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .dd-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
 .dd-menu::after{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--white);border-left:1px solid var(--border);border-top:1px solid var(--border)}
 .has-dropdown:hover .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+/* Estado abierto por toque (celular) */
+.has-dropdown.open .dd-toggle{color:var(--black)}
+.has-dropdown.open .dd-caret{transform:rotate(225deg) translateY(-1px)}
+.has-dropdown.open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .dd-menu a{display:block;padding:0.62rem 1.4rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:0.02em;text-transform:none;color:var(--gray);white-space:nowrap;transition:color 0.18s,background 0.18s,padding-left 0.18s}
 .dd-menu a:hover{color:var(--black);background:var(--off);padding-left:1.7rem}
 .dd-menu .dd-all{margin-top:0.4rem;padding-top:0.7rem;border-top:1px solid var(--border);font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
@@ -518,13 +522,37 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 </footer>
 
 <script>
+// ¿Dispositivo sin hover (celular/tablet)?
+const sinHover = () => window.matchMedia('(hover: none), (max-width: 768px)').matches;
+
+// Desplazamiento suave para enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
+    // En celular, "Catálogo" abre/cierra el menú en vez de desplazar
+    if(a.classList.contains('dd-toggle') && sinHover()) return;
     e.preventDefault();
     const t=document.querySelector(a.getAttribute('href'));
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
+
+// Menú Catálogo por toque en celular
+const dd = document.querySelector('.has-dropdown');
+if(dd){
+  const tog = dd.querySelector('.dd-toggle');
+  tog.addEventListener('click', e=>{
+    if(sinHover()){ e.preventDefault(); dd.classList.toggle('open'); }
+  });
+  // Cerrar al tocar fuera del menú
+  document.addEventListener('click', e=>{
+    if(!dd.contains(e.target)) dd.classList.remove('open');
+  });
+  // Cerrar al elegir una colección
+  dd.querySelectorAll('.dd-menu a').forEach(a=>{
+    a.addEventListener('click', ()=> dd.classList.remove('open'));
+  });
+}
+
 setTimeout(()=>{const b=document.getElementById('waBubble');if(b)b.style.display='none';},6000);
 </script>
 </body>
