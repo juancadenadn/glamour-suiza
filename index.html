@@ -446,9 +446,13 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 
     <!-- ESCLAVAS BEBE -->
     <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#E8E8E8" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg><span style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-gray)">Foto próximamente</span></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.5),transparent)">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="esclava-bebe-13cm.jpg" class="is-active" alt="Esclava de bebé cartier con placa en oro amarillo">
+          <img src="esclava-bebe-cubana-13cm.jpg" alt="Esclava de bebé tejido cubano con placa">
+          <img src="esclava-bebe-corazon-13cm.jpg" alt="Esclava de bebé cartier con placa de corazón">
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
           <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Esclavas de Bebé</div>
         </div>
@@ -608,17 +612,28 @@ if(dd){
 
 setTimeout(()=>{const b=document.getElementById('waBubble');if(b)b.style.display='none';},6000);
 
-// Rotador de fotos — alterna las imágenes con fundido suave
-document.querySelectorAll('[data-rotator]').forEach(r=>{
-  const imgs = r.querySelectorAll('img');
-  if(imgs.length < 2) return;
-  let i = 0;
-  setInterval(()=>{
-    imgs[i].classList.remove('is-active');
-    i = (i + 1) % imgs.length;
-    imgs[i].classList.add('is-active');
-  }, 2600);
-});
+// Rotador de fotos — todas avanzan en la misma sincronía con un solo temporizador.
+// Precargamos todas las imágenes antes de arrancar para que los cambios sean
+// instantáneos y las tarjetas queden perfectamente sincronizadas.
+const rotators = [...document.querySelectorAll('[data-rotator]')]
+  .map(r=>({imgs:[...r.querySelectorAll('img')], i:0}))
+  .filter(o=>o.imgs.length > 1);
+if(rotators.length){
+  const todas = rotators.flatMap(o=>o.imgs);
+  const lista = todas.map(img=>{
+    if(img.complete && img.naturalWidth) return Promise.resolve();
+    return new Promise(res=>{ img.addEventListener('load',res,{once:true}); img.addEventListener('error',res,{once:true}); });
+  });
+  Promise.all(lista).then(()=>{
+    setInterval(()=>{
+      rotators.forEach(o=>{
+        o.imgs[o.i].classList.remove('is-active');
+        o.i = (o.i + 1) % o.imgs.length;
+        o.imgs[o.i].classList.add('is-active');
+      });
+    }, 2600);
+  });
+}
 </script>
 </body>
 </html>
