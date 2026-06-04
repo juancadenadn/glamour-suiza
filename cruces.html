@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esclavas de Oro · Glamour by Suiza</title>
+<title>Cruces de Oro · Glamour by Suiza</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -58,10 +58,6 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 
 /* CUADRÍCULA DE PIEZAS */
 .pieces{padding:5rem 4rem 7rem;max-width:1280px;margin:0 auto}
-.photo-rotator{position:absolute;inset:0;width:100%;height:100%}
-.photo-rotator img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;padding:0}
-.photo-rotator.fit-contain img{object-fit:contain;background:var(--off)}
-.photo-rotator img.is-active{opacity:1}
 .pieces-bar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.5rem;flex-wrap:wrap;gap:0.5rem}
 .pieces-count{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray)}
 .pieces-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--gold)}
@@ -69,6 +65,14 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .piece{display:flex;flex-direction:column}
 .piece-img{position:relative;aspect-ratio:1/1;background:var(--off);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .piece-img img{width:100%;height:100%;object-fit:contain;padding:6%;transition:transform 0.6s ease}
+.photo-rotator{position:absolute;inset:0;background:var(--off)}
+.photo-rotator img{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 0.9s ease}
+.photo-rotator img.is-active{opacity:1}
+.photo-rotator img.rot-catalogo{object-fit:contain;padding:6%}
+.photo-rotator img.rot-cuello{object-fit:cover;padding:0}
+.piece-img--empty{display:flex;align-items:center;justify-content:center}
+.ph{display:flex;flex-direction:column;align-items:center;gap:0.9rem}
+.ph span{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);opacity:0.6}
 .piece:hover .piece-img img{transform:scale(1.06)}
 .piece-tag{position:absolute;top:0.9rem;left:0.9rem;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--black);background:rgba(255,255,255,0.9);padding:0.35rem 0.7rem;border:1px solid var(--border)}
 .piece-body{padding:1.3rem 0 0;display:flex;flex-direction:column;flex:1}
@@ -76,6 +80,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .piece-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.2;margin-bottom:0.5rem}
 .piece-meta{font-size:0.72rem;line-height:1.7;color:var(--gray);font-weight:300;margin-bottom:1.1rem}
 .piece-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--light-gray)}
+.piece-price{font-size:0.72rem;letter-spacing:0.04em;color:var(--black);font-weight:500}
+.piece-price em{font-style:normal;color:var(--gray);font-weight:300;font-size:0.62rem}
 .piece-cta{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color 0.2s}
 .piece-cta:hover{color:var(--gold)}
 
@@ -120,8 +126,8 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
         <a href="medallas.html">Medallas Religiosas</a>
         <a href="cadenas.html">Cadenas de Oro</a>
         <a href="collares.html">Collares de Oro</a>
-        <a href="cruces.html">Cruces de Oro</a>
-        <a href="esclavas.html" class="dd-active">Esclavas de Oro</a>
+        <a href="cruces.html" class="dd-active">Cruces de Oro</a>
+        <a href="esclavas.html">Esclavas de Oro</a>
         <a href="brillanteria.html">Brillantería</a>
         <a href="esclavas-bebe.html">Esclavas de Bebé</a>
         <a href="argollas.html">Argollas de Matrimonio</a>
@@ -140,22 +146,22 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
 
 <!-- CABECERA -->
 <section class="cat-hero">
-  <div class="crumb"><a href="index.html">Inicio</a> · <a href="index.html#coleccion">Catálogo</a> · <span>Esclavas de Oro</span></div>
-  <div class="cat-eyebrow">Para lucir en la muñeca</div>
-  <h1 class="cat-title">Esclavas de Oro</h1>
-  <p class="cat-desc">Esclavas de oro 10k y 14k para dama y caballero: tejido cartier, cubano, herradura y más. Lisas o con placa para grabar el nombre. Pregunta por el modelo que buscas y te cotizamos al momento.</p>
+  <div class="crumb"><a href="index.html">Inicio</a> · <a href="index.html#coleccion">Catálogo</a> · <span>Cruces de Oro</span></div>
+  <div class="cat-eyebrow">Fe que se luce</div>
+  <h1 class="cat-title">Cruces de Oro</h1>
+  <p class="cat-desc">Cruces y crucifijos en oro 10k y 14k: lisas, diamantadas y con brillantería. Para cadena o como dije. Pregunta por el modelo que buscas y te cotizamos al momento.</p>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-inner">
     <span class="marquee-item">Joyería oro 10 y 14k</span>
-    <span class="marquee-item">Grabado de nombres</span>
-    <span class="marquee-item">Tejido cartier y cubano</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
     <span class="marquee-item">Reparación de joyería</span>
     <span class="marquee-item">Joyería oro 10 y 14k</span>
-    <span class="marquee-item">Grabado de nombres</span>
-    <span class="marquee-item">Tejido cartier y cubano</span>
+    <span class="marquee-item">Diamantes y piedras preciosas</span>
+    <span class="marquee-item">Bisutería fina</span>
     <span class="marquee-item">Reparación de joyería</span>
   </div>
 </div>
@@ -163,8 +169,8 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
 <!-- PIEZAS -->
 <section class="pieces">
   <div class="pieces-bar">
-    <div class="pieces-count">6 modelos · Oro 10k y 14k</div>
-    <div class="pieces-note">Esclavas en oro 10k y 14k</div>
+    <div class="pieces-count">9 modelos · Oro 10k y 14k</div>
+    <div class="pieces-note">Cruces y crucifijos en oro</div>
   </div>
   <div class="grid" id="grid">
 
@@ -172,15 +178,15 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
     <article class="piece">
       <div class="piece-img">
         <span class="piece-tag">ETIQUETA</span>
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="FOTO-CATALOGO.jpg" class="is-active" alt="...">
-          <img src="FOTO-BRAZO.jpg" alt="...">
+        <div class="photo-rotator" data-rotator>
+          <img src="FOTO-CATALOGO.jpg" class="rot-catalogo is-active" alt="...">
+          <img src="FOTO-PUESTA.jpg" class="rot-cuello" alt="...">
         </div>
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · TIPO</div>
+        <div class="piece-cat">Collar · TIPO</div>
         <h3 class="piece-name">NOMBRE</h3>
-        <div class="piece-meta">Oro amarillo 10k y 14k</div>
+        <div class="piece-meta">Oro amarillo</div>
         <div class="piece-foot">
           <a class="piece-cta" href="https://wa.me/528715076880?text=..." target="_blank">Consultar precio →</a>
         </div>
@@ -190,84 +196,127 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-cartier.png" alt="Esclava de oro tejido cartier figaro en oro amarillo">
+        <img src="cruz-calada-cuad.jpg" alt="Cruz calada cuadrada en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Cartier</div>
-        <h3 class="piece-name">Cartier</h3>
+        <div class="piece-cat">Cruz · Calada</div>
+        <h3 class="piece-name">Cruz calada cuadrada</h3>
         <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Cartier%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20calada%20cuadrada%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-cubana-abierta.png" alt="Esclava de oro tejido cubano abierto en oro amarillo">
+        <img src="cruz-calada-larga.jpg" alt="Cruz calada alargada en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Cubana</div>
-        <h3 class="piece-name">Cubana abierta</h3>
+        <div class="piece-cat">Cruz · Calada</div>
+        <h3 class="piece-name">Cruz calada alargada</h3>
         <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Cubana%20abierta%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20calada%20alargada%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-cubana-cerrada.png" alt="Esclava de oro tejido cubano cerrado en oro amarillo">
+        <img src="cruz-lisa-1.jpg" alt="Cruz lisa fina en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Cubana</div>
-        <h3 class="piece-name">Cubana cerrada</h3>
+        <div class="piece-cat">Cruz · Lisa</div>
+        <h3 class="piece-name">Cruz lisa fina</h3>
         <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Cubana%20cerrada%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20lisa%20fina%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-milan.png" alt="Esclava de oro tejido milán eslabón alargado en oro amarillo">
+        <img src="cruz-lisa-2.jpg" alt="Cruz lisa redonda en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Milán</div>
-        <h3 class="piece-name">Milán</h3>
+        <div class="piece-cat">Cruz · Lisa</div>
+        <h3 class="piece-name">Cruz lisa redonda</h3>
         <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Mil%C3%A1n%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20lisa%20redonda%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-torsal.png" alt="Esclava de oro tejido torzal en oro amarillo">
+        <img src="cruz-lisa-3.jpg" alt="Cruz lisa maciza en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Torzal</div>
-        <h3 class="piece-name">Torzal</h3>
+        <div class="piece-cat">Cruz · Lisa</div>
+        <h3 class="piece-name">Cruz lisa maciza</h3>
         <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Torzal%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20lisa%20maciza%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
 
     <article class="piece">
       <div class="piece-img">
-        <img src="esclava-torsal-figaro.png" alt="Esclava de oro tejido torzal con figaro en oro amarillo">
+        <img src="cruz-zircu-1.jpg" alt="Cruz de zirconias en oro amarillo">
       </div>
       <div class="piece-body">
-        <div class="piece-cat">Esclava · Torzal figaro</div>
-        <h3 class="piece-name">Torzal con figaro</h3>
-        <div class="piece-meta">Oro amarillo · disponible en 10k y 14k</div>
+        <div class="piece-cat">Cruz · Zirconias</div>
+        <h3 class="piece-name">Cruz de zirconias</h3>
+        <div class="piece-meta">Oro amarillo · zirconias · 10k y 14k</div>
         <div class="piece-foot">
-          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20esclava%20de%20oro%20tejido%20Torzal%20con%20figaro%20%F0%9F%92%9B" target="_blank">Consultar precio →</a>
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20de%20zirconias%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <img src="cruz-zircu-2.jpg" alt="Cruz de zirconias mini en oro amarillo">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Cruz · Zirconias</div>
+        <h3 class="piece-name">Cruz de zirconias mini</h3>
+        <div class="piece-meta">Oro amarillo · zirconias · 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20de%20zirconias%20mini%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <img src="cruz-zircu-3.jpg" alt="Cruz de zirconias grande en oro amarillo">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Cruz · Zirconias</div>
+        <h3 class="piece-name">Cruz de zirconias grande</h3>
+        <div class="piece-meta">Oro amarillo · zirconias · 10k y 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20de%20zirconias%20grande%20de%20oro%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="piece">
+      <div class="piece-img">
+        <span class="piece-tag">14k</span>
+        <img src="cruz-bombao.jpg" alt="Cruz bombá en oro amarillo 14k en su cadena">
+      </div>
+      <div class="piece-body">
+        <div class="piece-cat">Cruz · Bombá</div>
+        <h3 class="piece-name">Cruz bombá</h3>
+        <div class="piece-meta">Oro amarillo 14k</div>
+        <div class="piece-foot">
+          <a class="piece-cta" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesa%20la%20Cruz%20bomb%C3%A1%20en%20oro%2014k%20%E2%9C%9D%EF%B8%8F" target="_blank">Consultar precio →</a>
         </div>
       </div>
     </article>
@@ -286,7 +335,7 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
   <div class="footer-copy">© 2026 Glamour by Suiza · Todos los derechos reservados</div>
 </footer>
 
-<a class="wa-btn" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesan%20las%20esclavas%20de%20oro" target="_blank" aria-label="WhatsApp">
+<a class="wa-btn" href="https://wa.me/528715076880?text=Hola%20Glamour%20by%20Suiza%2C%20me%20interesan%20las%20cruces%20de%20oro" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -300,26 +349,17 @@ if(dd){
   dd.querySelectorAll('.dd-menu a').forEach(a=>a.addEventListener('click', ()=> dd.classList.remove('open')));
 }
 
-// Rotador de fotos — todas avanzan sincronizadas con un solo temporizador.
-const rotators = [...document.querySelectorAll('[data-rotator]')]
-  .map(r=>({imgs:[...r.querySelectorAll('img')], i:0}))
-  .filter(o=>o.imgs.length > 1);
-if(rotators.length){
-  const todas = rotators.flatMap(o=>o.imgs);
-  const lista = todas.map(img=>{
-    if(img.complete && img.naturalWidth) return Promise.resolve();
-    return new Promise(res=>{ img.addEventListener('load',res,{once:true}); img.addEventListener('error',res,{once:true}); });
-  });
-  Promise.all(lista).then(()=>{
-    setInterval(()=>{
-      rotators.forEach(o=>{
-        o.imgs[o.i].classList.remove('is-active');
-        o.i = (o.i + 1) % o.imgs.length;
-        o.imgs[o.i].classList.add('is-active');
-      });
-    }, 2600);
-  });
-}
+// Rotador de fotos en piezas (catálogo ↔ cuello)
+document.querySelectorAll('[data-rotator]').forEach(r=>{
+  const imgs = r.querySelectorAll('img');
+  if(imgs.length < 2) return;
+  let i = 0;
+  setInterval(()=>{
+    imgs[i].classList.remove('is-active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('is-active');
+  }, 2600);
+});
 </script>
 </body>
 </html>
