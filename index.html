@@ -22,7 +22,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--bla
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(252,250,246,0.97);backdrop-filter:blur(10px);border-bottom:none;box-shadow:0 1px 0 rgba(196,165,90,0.25)}
-nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold) 35%,#B8923E 65%,var(--gold-light))}
+nav::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(196,165,90,0.45) 50%,transparent)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{text-decoration:none;font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);transition:color 0.2s}
 .nav-links a:hover{color:var(--black)}
@@ -52,8 +52,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .nav-cta:hover{color:var(--gold);border-color:var(--gold)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:70px;padding-bottom:2rem;text-align:center;position:relative}
-.hero-logo{display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-bottom:2.5rem}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:104px;padding-bottom:2rem;text-align:center;position:relative}
+.hero-logo{display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-top:1.5rem;margin-bottom:3.4rem}
 .logo-main{font-family:'Montserrat',sans-serif;font-weight:200;font-size:clamp(2.7rem,8.1vw,7.2rem);letter-spacing:0.45em;text-transform:uppercase;color:var(--black);line-height:1}
 .logo-sub{font-family:'Montserrat',sans-serif;font-weight:300;font-size:clamp(0.6rem,1.5vw,1rem);letter-spacing:0.7em;text-transform:uppercase;color:var(--black)}
 .hero-divider{width:1px;height:35px;background:var(--black);margin:0 auto 2rem}
@@ -74,7 +74,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .hero .hero-content-2col .hero-left-text{padding-bottom:0}
 .hero .hero-content-2col .hero-stores{max-width:360px;margin-top:0;border-top:none;padding-top:0}
 @media(max-width:768px){.hero .hero-content-2col{grid-template-columns:1fr;gap:2.5rem;padding:0 1.5rem}.hero .hero-content-2col .hero-stores{margin-top:0.5rem;max-width:none}}
-.hero-stores-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.hero-stores-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gray);margin-bottom:0.4rem}
 .hero-store{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:0.8rem 0;border-bottom:1px solid var(--border)}
 .hero-store:last-child{border-bottom:none;padding-bottom:0}
 .hs-info{display:flex;flex-direction:column;gap:0.3rem}
@@ -102,11 +102,14 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 .marquee-item{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
 .marquee-item::after{content:'✦';color:var(--gold);font-size:0.5rem}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-static{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:1.6rem 2.6rem}
+.marquee-static span{font-size:0.6rem;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.5);display:flex;align-items:center}
+.marquee-static span:not(:last-child)::after{content:'✦';color:var(--gold);font-size:0.45rem;margin-left:2.6rem}
 
 /* COLLECTION */
 #coleccion{padding:7rem 4rem;background:var(--white)}
 .col-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
-.col-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:400}
+.col-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gray);margin-bottom:0.8rem;font-weight:400}
 .col-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
 .col-link{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);text-decoration:none;border-bottom:1px solid var(--light-gray);padding-bottom:2px;transition:color 0.2s,border-color 0.2s}
 .col-link:hover{color:var(--black);border-color:var(--black)}
@@ -123,7 +126,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 
 /* ABOUT */
 .about{padding:7rem 4rem;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
-.about-text .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.about-text .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem}
 .about-text h2{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);line-height:1.2;margin-bottom:2rem}
 .about-text p{font-size:0.82rem;line-height:2.1;color:rgba(255,255,255,0.5);font-weight:300;margin-bottom:1.2rem}
 .about-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;margin-top:1rem}
@@ -136,18 +139,18 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 /* VALUES */
 .values{padding:7rem 4rem;background:var(--off)}
 .val-header{text-align:center;margin-bottom:5rem}
-.val-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.val-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem}
 .val-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
 .val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--light-gray);border-left:1px solid var(--light-gray)}
 .val-item{padding:2.5rem 2rem;border-right:1px solid var(--light-gray);border-bottom:1px solid var(--light-gray)}
-.val-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold);margin-bottom:1rem;line-height:1}
+.val-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:rgba(10,10,10,0.16);margin-bottom:1rem;line-height:1}
 .val-name{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);margin-bottom:0.8rem;font-weight:500}
 .val-desc{font-size:0.78rem;line-height:1.9;color:var(--gray);font-weight:300}
 
 /* TESTIMONIALS */
 .testimonials{padding:7rem 4rem;background:var(--white)}
 .test-header{text-align:center;margin-bottom:5rem}
-.test-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.test-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem}
 .test-title{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 .test-card{padding:2.5rem;border:1px solid var(--light-gray)}
@@ -158,7 +161,7 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;backgro
 
 /* CONTACT */
 #contacto{padding:7rem 4rem;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:8rem}
-.ct-left .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.ct-left .eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem}
 .ct-left h2{font-family:'Montserrat',sans-serif;font-weight:200;font-size:2.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);line-height:1.2;margin-bottom:1.5rem}
 .ct-left h2 em{font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--gold);font-weight:300;font-size:3.2rem}
 .ct-left p{font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.45);font-weight:300;margin-bottom:2.5rem}
@@ -228,15 +231,15 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
       <a href="#coleccion" class="dd-toggle">Catálogo <span class="dd-caret"></span></a>
       <!-- COLECCIONES: para agregar una nueva, solo copia una línea <a> y cambia el texto y el href -->
       <div class="dd-menu">
-        <a href="iniciales.html">Iniciales de Oro</a>
+        <a href="argollas.html">Argollas de Matrimonio</a>
         <a href="medallas.html">Medallas Religiosas</a>
+        <a href="esclavas-bebe.html">Esclavas de Bebé</a>
         <a href="cadenas.html">Cadenas de Oro</a>
-        <a href="collares.html">Collares de Oro</a>
         <a href="cruces.html">Cruces de Oro</a>
         <a href="esclavas.html">Esclavas de Oro</a>
         <a href="brillanteria.html">Brillantería</a>
-        <a href="esclavas-bebe.html">Esclavas de Bebé</a>
-        <a href="argollas.html">Argollas de Matrimonio</a>
+        <a href="collares.html">Collares de Oro</a>
+        <a href="iniciales.html">Iniciales de Oro</a>
         <a href="#coleccion" class="dd-all">Ver todo el catálogo →</a>
       </div>
     </li>
@@ -258,7 +261,7 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
     <div class="logo-main">Glamour</div>
     <div style="display:flex;align-items:center;gap:1rem;margin-top:0.5rem">
       <span class="logo-sub">by</span>
-      <img src="logo-suiza.jpeg" alt="Suiza Joyerías" style="height:120px;object-fit:contain;filter:grayscale(100%)">
+      <img src="logo-suiza.jpeg" alt="Suiza Joyerías" style="height:185px;object-fit:contain">
     </div>
   </div>
   <div class="hero-divider"></div>
@@ -302,16 +305,11 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
 
 <!-- MARQUEE -->
 <div class="marquee">
-  <div class="marquee-inner">
-    <span class="marquee-item">Joyería oro 10 y 14k</span>
-    <span class="marquee-item">Diamantes y piedras preciosas</span>
-    <span class="marquee-item">Bisutería fina</span>
-    <span class="marquee-item">Reparación de joyería</span>
-
-    <span class="marquee-item">Joyería oro 10 y 14k</span>
-    <span class="marquee-item">Diamantes y piedras preciosas</span>
-    <span class="marquee-item">Bisutería fina</span>
-    <span class="marquee-item">Reparación de joyería</span>
+  <div class="marquee-static">
+    <span>Joyería oro 10 y 14k</span>
+    <span>Diamantes y piedras preciosas</span>
+    <span>Bisutería fina</span>
+    <span>Reparación de joyería</span>
   </div>
 </div>
 
@@ -323,8 +321,179 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem" class="col-collections">
 
+    <!-- ARGOLLAS -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="par-4y5mm.jpg" class="is-active" alt="Par de argollas clásicas en oro amarillo">
+          <img src="par-maciza-churumbela.jpg" alt="Par de argollas con churumbela">
+          <img src="par-4y5mm-blancas.jpg" alt="Par de argollas clásicas en oro blanco">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Catálogo</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Argollas de Matrimonio</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+          <a href="argollas.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDALLAS -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <div class="photo-rotator" data-rotator>
+          <img src="medalla-divino-nino.png" class="is-active" alt="Medalla Divino Niño">
+          <img src="medalla-virgen-maria.png" alt="Medalla Virgen de Guadalupe">
+          <img src="sagrado-corazon-oval.png" alt="Medalla Sagrado Corazón ovalada">
+          <img src="sagrado-corazon-rect.png" alt="Medalla Sagrado Corazón rectangular">
+          <img src="san-benito-solido.png" alt="Medalla San Benito sólida">
+          <img src="medalla-virgen-bultoplana.png" alt="Medalla Virgen de Guadalupe bulto plano">
+          <img src="virgen-bulto-plana-rectangular.png" alt="Medalla Virgen de Guadalupe bulto plano rectangular">
+          <img src="virgen-bulto-marco-flor.png" alt="Medalla Virgen de Guadalupe con marco de flor">
+          <img src="virgen-busto-marco-flor.png" alt="Medalla Virgen de Guadalupe busto con marco de flor">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Medallas Religiosas</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Varios santos</div>
+          <a href="medallas.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESCLAVAS BEBE -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="esclava-bebe-13cm.jpg" class="is-active" alt="Esclava de bebé cartier con placa en oro amarillo">
+          <img src="esclava-bebe-cubana-13cm.jpg" alt="Esclava de bebé tejido cubano con placa">
+          <img src="esclava-bebe-corazon-13cm.jpg" alt="Esclava de bebé cartier con placa de corazón">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Catálogo</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Esclavas de Bebé</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+          <a href="esclavas-bebe.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CADENAS -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="torsal-1mm.png" class="is-active" alt="Cadena torzal 1mm en oro">
+          <img src="torsal-2mm.png" alt="Cadena torzal 2mm en oro">
+          <img src="torsal-3mm.png" alt="Cadena torzal 3mm en oro">
+          <img src="torsal-4mm.png" alt="Cadena torzal 4mm en oro">
+          <img src="cartier313-2mm.png" alt="Cadena Cartier 3.1.3 2mm en oro">
+          <img src="cartier313-3mm.png" alt="Cadena Cartier 3.1.3 3mm en oro">
+          <img src="cartier313-4mm.png" alt="Cadena Cartier 3.1.3 4mm en oro">
+          <img src="cubana-2mm.png" alt="Cadena cubana 2mm en oro">
+          <img src="cubana-3mm.png" alt="Cadena cubana 3mm en oro">
+          <img src="cubana-4mm.png" alt="Cadena cubana 4mm en oro">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Cadenas de Oro</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+          <a href="cadenas.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRUCES -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="cruz-lisa-3.jpg" class="is-active" alt="Cruz lisa maciza en oro amarillo">
+          <img src="cruz-zircu-3.jpg" alt="Cruz de zirconias grande en oro amarillo">
+          <img src="cruz-calada-cuad.jpg" alt="Cruz calada cuadrada en oro amarillo">
+          <img src="cruz-zircu-1.jpg" alt="Cruz de zirconias en oro amarillo">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Cruces de Oro</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k · lisas, caladas y con zirconias</div>
+          <a href="cruces.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESCLAVAS -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="esclava-cartier.png" class="is-active" alt="Esclava de oro tejido cartier">
+          <img src="esclava-cubana-abierta.png" alt="Esclava de oro tejido cubano abierto">
+          <img src="esclava-milan.png" alt="Esclava de oro tejido milán">
+          <img src="esclava-torsal.png" alt="Esclava de oro tejido torzal">
+          <img src="esclava-torsal-figaro.png" alt="Esclava de oro tejido torzal con figaro">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Catálogo</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Esclavas de Oro</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
+          <a href="esclavas.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRILLANTERIA -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
+        <div class="photo-rotator" data-rotator>
+          <img src="brillante-amatista-1.jpg" class="is-active" alt="Anillo de amatista con halo de diamantes" style="object-fit:cover">
+          <img src="tanzanita-gota-diamante.png" alt="Anillo de tanzanita en gota con diamantes" style="object-fit:cover">
+          <img src="zafiro-gota-diamantes.png" alt="Anillo de zafiro en gota con diamantes" style="object-fit:cover">
+          <img src="esmeralda-gota-diamantes.png" alt="Anillo de esmeralda en gota con diamantes" style="object-fit:cover">
+          <img src="churumbela-esmeraldas-blanco.png" alt="Media churumbela de esmeraldas en oro blanco" style="object-fit:cover">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Brillantería</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Diamantes y piedras preciosas</div>
+          <a href="brillanteria.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLLARES -->
+    <div style="background:var(--white)">
+      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
+        <div class="photo-rotator fit-contain" data-rotator>
+          <img src="collar-3-corazones-bombaos.jpg" class="is-active" alt="Collar de 3 corazones bombaos en oro tricolor 14k">
+          <img src="collar-corazon-bombao-chico.jpg" alt="Collar de corazón bombao en oro amarillo 14k">
+          <img src="collar-corazon-bombao-blanco.jpg" alt="Collar de corazón bombao en oro blanco 14k">
+          <img src="collar-aritos-suerte.jpg" alt="Collar de aritos de la suerte en oro tricolor 10k">
+        </div>
+      </div>
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Collares de Oro</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Cadena con dije</div>
+          <a href="collares.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
+        </div>
+      </div>
+    </div>
+
     <!-- INICIALES -->
-    <div style="background:var(--off);overflow:hidden">
+    <div style="background:var(--white)">
       <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
         <div class="photo-rotator fit-contain" data-rotator>
           <img src="inicial-a.png" class="is-active" alt="Inicial A en oro">
@@ -354,185 +523,14 @@ footer{padding:2rem 4rem;background:var(--black);border-top:1px solid rgba(255,2
           <img src="inicial-y.png" alt="Inicial Y en oro">
           <img src="inicial-z.png" alt="Inicial Z en oro">
         </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent)">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Iniciales de Oro</div>
-        </div>
       </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Todas las letras</div>
-        <a href="iniciales.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- MEDALLAS -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
-        <div class="photo-rotator" data-rotator>
-          <img src="medalla-divino-nino.png" class="is-active" alt="Medalla Divino Niño">
-          <img src="medalla-virgen-maria.png" alt="Medalla Virgen de Guadalupe">
-          <img src="sagrado-corazon-oval.png" alt="Medalla Sagrado Corazón ovalada">
-          <img src="sagrado-corazon-rect.png" alt="Medalla Sagrado Corazón rectangular">
-          <img src="san-benito-solido.png" alt="Medalla San Benito sólida">
-          <img src="medalla-virgen-bultoplana.png" alt="Medalla Virgen de Guadalupe bulto plano">
-          <img src="virgen-bulto-plana-rectangular.png" alt="Medalla Virgen de Guadalupe bulto plano rectangular">
-          <img src="virgen-bulto-marco-flor.png" alt="Medalla Virgen de Guadalupe con marco de flor">
-          <img src="virgen-busto-marco-flor.png" alt="Medalla Virgen de Guadalupe busto con marco de flor">
+      <div style="padding:1.4rem 0 0.2rem">
+        <div style="font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-bottom:0.5rem">Colección</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--black);line-height:1.1;margin-bottom:0.8rem">Iniciales de Oro</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:0.9rem;border-top:1px solid var(--light-gray)">
+          <div style="font-size:0.7rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Todas las letras</div>
+          <a href="iniciales.html" style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap">Ver catálogo →</a>
         </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Medallas Religiosas</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Varios santos</div>
-        <a href="medallas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- CADENAS -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="torsal-1mm.png" class="is-active" alt="Cadena torzal 1mm en oro">
-          <img src="torsal-2mm.png" alt="Cadena torzal 2mm en oro">
-          <img src="torsal-3mm.png" alt="Cadena torzal 3mm en oro">
-          <img src="torsal-4mm.png" alt="Cadena torzal 4mm en oro">
-          <img src="cartier313-2mm.png" alt="Cadena Cartier 3.1.3 2mm en oro">
-          <img src="cartier313-3mm.png" alt="Cadena Cartier 3.1.3 3mm en oro">
-          <img src="cartier313-4mm.png" alt="Cadena Cartier 3.1.3 4mm en oro">
-          <img src="cubana-2mm.png" alt="Cadena cubana 2mm en oro">
-          <img src="cubana-3mm.png" alt="Cadena cubana 3mm en oro">
-          <img src="cubana-4mm.png" alt="Cadena cubana 4mm en oro">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Cadenas de Oro</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
-        <a href="cadenas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- COLLARES -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="collar-3-corazones-bombaos.jpg" class="is-active" alt="Collar de 3 corazones bombaos en oro tricolor 14k">
-          <img src="collar-corazon-bombao-chico.jpg" alt="Collar de corazón bombao en oro amarillo 14k">
-          <img src="collar-corazon-bombao-blanco.jpg" alt="Collar de corazón bombao en oro blanco 14k">
-          <img src="collar-aritos-suerte.jpg" alt="Collar de aritos de la suerte en oro tricolor 10k">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Collares de Oro</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · Cadena con dije</div>
-        <a href="collares.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- CRUCES -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="cruz-lisa-3.jpg" class="is-active" alt="Cruz lisa maciza en oro amarillo">
-          <img src="cruz-zircu-3.jpg" alt="Cruz de zirconias grande en oro amarillo">
-          <img src="cruz-calada-cuad.jpg" alt="Cruz calada cuadrada en oro amarillo">
-          <img src="cruz-zircu-1.jpg" alt="Cruz de zirconias en oro amarillo">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Cruces de Oro</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k · lisas, caladas y con zirconias</div>
-        <a href="cruces.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- ESCLAVAS -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;position:relative;overflow:hidden">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="esclava-cartier.png" class="is-active" alt="Esclava de oro tejido cartier">
-          <img src="esclava-cubana-abierta.png" alt="Esclava de oro tejido cubano abierto">
-          <img src="esclava-milan.png" alt="Esclava de oro tejido milán">
-          <img src="esclava-torsal.png" alt="Esclava de oro tejido torzal">
-          <img src="esclava-torsal-figaro.png" alt="Esclava de oro tejido torzal con figaro">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Esclavas de Oro</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
-        <a href="esclavas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- BRILLANTERIA -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
-        <div class="photo-rotator" data-rotator>
-          <img src="brillante-amatista-1.jpg" class="is-active" alt="Anillo de amatista con halo de diamantes" style="object-fit:cover">
-          <img src="tanzanita-gota-diamante.png" alt="Anillo de tanzanita en gota con diamantes" style="object-fit:cover">
-          <img src="zafiro-gota-diamantes.png" alt="Anillo de zafiro en gota con diamantes" style="object-fit:cover">
-          <img src="esmeralda-gota-diamantes.png" alt="Anillo de esmeralda en gota con diamantes" style="object-fit:cover">
-          <img src="churumbela-esmeraldas-blanco.png" alt="Media churumbela de esmeraldas en oro blanco" style="object-fit:cover">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Colección</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Brillantería</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Diamantes y piedras preciosas</div>
-        <a href="brillanteria.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- ESCLAVAS BEBE -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="esclava-bebe-13cm.jpg" class="is-active" alt="Esclava de bebé cartier con placa en oro amarillo">
-          <img src="esclava-bebe-cubana-13cm.jpg" alt="Esclava de bebé tejido cubano con placa">
-          <img src="esclava-bebe-corazon-13cm.jpg" alt="Esclava de bebé cartier con placa de corazón">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Esclavas de Bebé</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
-        <a href="esclavas-bebe.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
-      </div>
-    </div>
-
-    <!-- ARGOLLAS -->
-    <div style="background:var(--off);overflow:hidden">
-      <div style="aspect-ratio:1/1;overflow:hidden;position:relative">
-        <div class="photo-rotator fit-contain" data-rotator>
-          <img src="par-4y5mm.jpg" class="is-active" alt="Par de argollas clásicas en oro amarillo">
-          <img src="par-maciza-churumbela.jpg" alt="Par de argollas con churumbela">
-          <img src="par-4y5mm-blancas.jpg" alt="Par de argollas clásicas en oro blanco">
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(10,10,10,0.7),transparent);z-index:2">
-          <div style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px">Catálogo</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff">Argollas de Matrimonio</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem;display:flex;justify-content:space-between;align-items:center">
-        <div style="font-size:0.72rem;color:var(--gray);font-weight:300">Oro 10k y 14k</div>
-        <a href="argollas.html" style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px">Ver catálogo →</a>
       </div>
     </div>
 
