@@ -131,6 +131,7 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
   </ul>
   <div class="nav-center">¡Reparamos tu joyería de oro y plata!</div>
   <div class="nav-right">
+    <button class="gs-btn" data-gs-open type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Buscar</button>
     <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;padding:0.45rem 1rem;border-radius:4px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
       Instagram
@@ -169,12 +170,12 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
   <div class="grid" id="grid">
 
     <!-- Las piezas se agregan aquí. Plantilla de una pieza:
-    <article class="piece">
+    <article class="piece" id="p-nombre" style="display:none" data-plantilla>
       <div class="piece-img">
         <span class="piece-tag">ETIQUETA</span>
         <div class="photo-rotator fit-contain" data-rotator>
-          <img src="FOTO-CATALOGO.jpg" class="is-active" alt="...">
-          <img src="FOTO-BRAZO.jpg" alt="...">
+          <img src="FOTO-CATALOGO.jpg" class="is-active" alt="..." loading="lazy" decoding="async">
+          <img src="FOTO-BRAZO.jpg" alt="..." loading="lazy" decoding="async">
         </div>
       </div>
       <div class="piece-body">
@@ -188,9 +189,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
     </article>
     -->
 
-    <article class="piece">
+    <article class="piece" id="p-cartier">
       <div class="piece-img">
-        <img src="esclava-cartier.png" alt="Esclava de oro tejido cartier figaro en oro amarillo">
+        <img src="img/esclava-cartier.jpg" alt="Esclava de oro tejido cartier figaro en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Cartier</div>
@@ -202,9 +203,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cubana-abierta">
       <div class="piece-img">
-        <img src="esclava-cubana-abierta.png" alt="Esclava de oro tejido cubano abierto en oro amarillo">
+        <img src="img/esclava-cubana-abierta.jpg" alt="Esclava de oro tejido cubano abierto en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Cubana</div>
@@ -216,9 +217,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cubana-cerrada">
       <div class="piece-img">
-        <img src="esclava-cubana-cerrada.png" alt="Esclava de oro tejido cubano cerrado en oro amarillo">
+        <img src="img/esclava-cubana-cerrada.jpg" alt="Esclava de oro tejido cubano cerrado en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Cubana</div>
@@ -230,9 +231,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-milan">
       <div class="piece-img">
-        <img src="esclava-milan.png" alt="Esclava de oro tejido milán eslabón alargado en oro amarillo">
+        <img src="img/esclava-milan.jpg" alt="Esclava de oro tejido milán eslabón alargado en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Milán</div>
@@ -244,9 +245,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-torzal">
       <div class="piece-img">
-        <img src="esclava-torsal.png" alt="Esclava de oro tejido torzal en oro amarillo">
+        <img src="img/esclava-torsal.jpg" alt="Esclava de oro tejido torzal en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Torzal</div>
@@ -258,9 +259,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-torzal-con-figaro">
       <div class="piece-img">
-        <img src="esclava-torsal-figaro.png" alt="Esclava de oro tejido torzal con figaro en oro amarillo">
+        <img src="img/esclava-torsal-figaro.jpg" alt="Esclava de oro tejido torzal con figaro en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Esclava · Torzal figaro</div>
@@ -321,5 +322,7 @@ if(rotators.length){
   });
 }
 </script>
+<script src="buscador.js"></script>
+<script src="galeria.js"></script>
 </body>
 </html>

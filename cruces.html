@@ -137,6 +137,7 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
   </ul>
   <div class="nav-center">¡Reparamos tu joyería de oro y plata!</div>
   <div class="nav-right">
+    <button class="gs-btn" data-gs-open type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Buscar</button>
     <a href="https://www.instagram.com/joyeriasuiza/?hl=es" target="_blank" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;padding:0.45rem 1rem;border-radius:4px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
       Instagram
@@ -175,12 +176,12 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
   <div class="grid" id="grid">
 
     <!-- Las piezas se agregan aquí. Plantilla de una pieza:
-    <article class="piece">
+    <article class="piece" id="p-nombre" style="display:none" data-plantilla>
       <div class="piece-img">
         <span class="piece-tag">ETIQUETA</span>
         <div class="photo-rotator" data-rotator>
-          <img src="FOTO-CATALOGO.jpg" class="rot-catalogo is-active" alt="...">
-          <img src="FOTO-PUESTA.jpg" class="rot-cuello" alt="...">
+          <img src="FOTO-CATALOGO.jpg" class="rot-catalogo is-active" alt="..." loading="lazy" decoding="async">
+          <img src="FOTO-PUESTA.jpg" class="rot-cuello" alt="..." loading="lazy" decoding="async">
         </div>
       </div>
       <div class="piece-body">
@@ -194,9 +195,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
     </article>
     -->
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-calada-cuadrada">
       <div class="piece-img">
-        <img src="cruz-calada-cuad.jpg" alt="Cruz calada cuadrada en oro amarillo">
+        <img src="img/cruz-calada-cuad.jpg" alt="Cruz calada cuadrada en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Calada</div>
@@ -208,9 +209,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-calada-alargada">
       <div class="piece-img">
-        <img src="cruz-calada-larga.jpg" alt="Cruz calada alargada en oro amarillo">
+        <img src="img/cruz-calada-larga.jpg" alt="Cruz calada alargada en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Calada</div>
@@ -222,9 +223,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-lisa-fina">
       <div class="piece-img">
-        <img src="cruz-lisa-1.jpg" alt="Cruz lisa fina en oro amarillo">
+        <img src="img/cruz-lisa-1.jpg" alt="Cruz lisa fina en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Lisa</div>
@@ -236,9 +237,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-lisa-redonda">
       <div class="piece-img">
-        <img src="cruz-lisa-2.jpg" alt="Cruz lisa redonda en oro amarillo">
+        <img src="img/cruz-lisa-2.jpg" alt="Cruz lisa redonda en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Lisa</div>
@@ -250,9 +251,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-lisa-maciza">
       <div class="piece-img">
-        <img src="cruz-lisa-3.jpg" alt="Cruz lisa maciza en oro amarillo">
+        <img src="img/cruz-lisa-3.jpg" alt="Cruz lisa maciza en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Lisa</div>
@@ -264,9 +265,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-de-zirconias">
       <div class="piece-img">
-        <img src="cruz-zircu-1.jpg" alt="Cruz de zirconias en oro amarillo">
+        <img src="img/cruz-zircu-1.jpg" alt="Cruz de zirconias en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Zirconias</div>
@@ -278,9 +279,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-de-zirconias-mini">
       <div class="piece-img">
-        <img src="cruz-zircu-2.jpg" alt="Cruz de zirconias mini en oro amarillo">
+        <img src="img/cruz-zircu-2.jpg" alt="Cruz de zirconias mini en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Zirconias</div>
@@ -292,9 +293,9 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-de-zirconias-grande">
       <div class="piece-img">
-        <img src="cruz-zircu-3.jpg" alt="Cruz de zirconias grande en oro amarillo">
+        <img src="img/cruz-zircu-3.jpg" alt="Cruz de zirconias grande en oro amarillo" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Zirconias</div>
@@ -306,10 +307,10 @@ footer{padding:2rem 4rem;background:var(--black);display:flex;justify-content:sp
       </div>
     </article>
 
-    <article class="piece">
+    <article class="piece" id="p-cruz-bomba">
       <div class="piece-img">
         <span class="piece-tag">14k</span>
-        <img src="cruz-bombao.jpg" alt="Cruz bombá en oro amarillo 14k en su cadena">
+        <img src="img/cruz-bombao.jpg" alt="Cruz bombá en oro amarillo 14k en su cadena" loading="lazy" decoding="async">
       </div>
       <div class="piece-body">
         <div class="piece-cat">Cruz · Bombá</div>
@@ -361,5 +362,7 @@ document.querySelectorAll('[data-rotator]').forEach(r=>{
   }, 2600);
 });
 </script>
+<script src="buscador.js"></script>
+<script src="galeria.js"></script>
 </body>
 </html>
